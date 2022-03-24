@@ -10,7 +10,7 @@ fun main() {
     quantosPares(numeros)
 }
 
-class Conta {
+class ContaBancaria {
     var nome = "henrique";
     var quantidadeDePenises = 1;
     var jaJogouLol = true;
