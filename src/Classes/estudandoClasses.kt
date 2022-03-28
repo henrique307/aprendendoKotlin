@@ -1,5 +1,3 @@
-import kotlin.reflect.typeOf
-
 fun main() {
     val henrique = Conta("henrique", "senha")
 
@@ -11,22 +9,31 @@ fun main() {
 
     println(henrique.gold)
 
-    print(henrique.conectado)
+    henrique.adicionaGold(100)
+
+    println(henrique.gold)
+
 }
 
-open class Conta(var jogador: String, senha: String, gold : Int = 0) {
+open class Conta(var nome: String, senha: String, gold: Int = 0) {
 
     var gold = gold
-        private set(value) { field = value }
+        protected set(value) {
+            field = value
+        }
 
     var senha = senha
-        private set(value) { field = value }
+        private set(value) {
+            field = value
+        }
 
     var conectado = false
-        private set(valor){ field = valor }
+        private set(valor) {
+            field = valor
+        }
 
     fun conecta(jogador: String, senha: String) {
-        if (this.jogador === jogador && this.senha === senha) {
+        if (this.nome === jogador && this.senha === senha) {
             conectado = true
             println("jogador conectado com sucesso!")
         } else {
@@ -34,7 +41,7 @@ open class Conta(var jogador: String, senha: String, gold : Int = 0) {
         }
     }
 
-    fun desconecta(){
+    fun desconecta() {
         conectado = false
     }
 
@@ -66,16 +73,45 @@ open class Conta(var jogador: String, senha: String, gold : Int = 0) {
             }
 
             else -> {
-                this.jogador = novoNome
+                this.nome = novoNome
             }
         }
     }
 
-    open fun adicionaGold(valor : Int){
-        if(this.conectado){
-            this.gold = valor
+    open fun adicionaGold(valor: Int) {
+        if (this.conectado) {
+            this.gold += valor
         }
     }
 }
 
-//class ContaVIP(var jogador: String, senha: String, gold: Int=0):
+class ContaVIP : Conta {
+    constructor(
+        nome: String,
+        senha: String,
+        gold: Int = 0
+    ) : super(
+        nome = nome,
+        senha = senha,
+        gold = gold
+    ) {
+    }
+
+    override fun adicionaGold(valor: Int) {
+        var valorSomado = valor + 10
+
+        if (this.conectado) {
+            this.gold += valorSomado
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
