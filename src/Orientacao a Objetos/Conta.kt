@@ -8,14 +8,16 @@ abstract class Conta(var nome: String, senha: String, gold: Int = 0) {
         }
 
     var senha = senha
-        private set(value) {
+        protected set(value) {
             field = value
         }
 
     var conectado = false
-        private set(valor) {
+        protected set(valor) {
             field = valor
         }
+
+    var banido: Boolean = false
 
     fun conecta(jogador: String, senha: String) {
         if (this.nome === jogador && this.senha === senha) {
