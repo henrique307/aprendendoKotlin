@@ -1,21 +1,6 @@
-fun main() {
-    val henrique = Conta("henrique", "senha")
+package `Orientacao a Objetos`
 
-    henrique.conecta("henrique", "senha")
-
-    println(henrique.gold)
-
-    henrique.adicionaGold(100)
-
-    println(henrique.gold)
-
-    henrique.adicionaGold(100)
-
-    println(henrique.gold)
-
-}
-
-open class Conta(var nome: String, senha: String, gold: Int = 0) {
+abstract class Conta(var nome: String, senha: String, gold: Int = 0) {
 
     var gold = gold
         protected set(value) {
@@ -84,34 +69,3 @@ open class Conta(var nome: String, senha: String, gold: Int = 0) {
         }
     }
 }
-
-class ContaVIP : Conta {
-    constructor(
-        nome: String,
-        senha: String,
-        gold: Int = 0
-    ) : super(
-        nome = nome,
-        senha = senha,
-        gold = gold
-    ) {
-    }
-
-    override fun adicionaGold(valor: Int) {
-        var valorSomado = valor + 10
-
-        if (this.conectado) {
-            this.gold += valorSomado
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
