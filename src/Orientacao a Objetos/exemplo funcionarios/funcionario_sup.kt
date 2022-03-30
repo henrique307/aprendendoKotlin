@@ -1,18 +1,22 @@
 package `Orientacao a Objetos`.`exemplo funcionarios`
 
+fun main(){
+    val henrique = Supervisor("hen","123", 123,"senhaForte" )
+
+    henrique.autentica("hen", "senhaForte")
+}
+
 class Supervisor(
     nome: String,
     cpf: String,
-    salario: Int = 0,
-    senha:String = "admin"
+    salario: Int,
+    senha:String,
 ) : FuncionarioSup(
     nome = nome,
     cpf = cpf,
-    salario = salario
+    salario = salario,
+    senha = senha
 ) {
-    override protected var senha: String
-        set(value) {}
 
-    override var salario: Int = salario
 
 }
