@@ -4,6 +4,8 @@ fun main(){
     val henrique = Supervisor("hen","123", 123,"senhaForte" )
 
     henrique.autentica("hen", "senhaForte")
+
+    henrique.mudaSenha("senhaForte", "senhaForte2") // mudando pra uma senha mais confiável ;)
 }
 
 class Supervisor(
@@ -16,7 +18,4 @@ class Supervisor(
     cpf = cpf,
     salario = salario,
     senha = senha
-) {
-
-
-}
+)

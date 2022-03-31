@@ -24,11 +24,13 @@ abstract class Funcionario(
         }
 
     fun aumento(valor: Int){
-        this.salario += valor;
+        salario += valor;
+        println(salario)
     }
 
     fun desconto(valor: Int){
-        this.salario -= valor
+        salario -= valor
+        println(salario)
     }
 }
 
@@ -46,9 +48,11 @@ abstract class FuncionarioSup(
     protected var conectado:Boolean = false
 
     override fun autentica(nome: String, senha: String) {
-        if(this.nome !== nome && this.senha !== senha){
+        if(this.nome === nome && this.senha === senha){
             this.conectado = true
-            println("Bem vindo ${this.nome}")
+            println("Bem vindo ${this.nome}!")
+        }else {
+            println("Nome de usuário ou senha incorretos")
         }
     }
 
@@ -56,6 +60,7 @@ abstract class FuncionarioSup(
         if(senha !== senhaAntiga){
             println("Senha incorreta")
         }else{
+            println("Senha alterada com sucesso!")
             senha = novaSenha
         }
     }

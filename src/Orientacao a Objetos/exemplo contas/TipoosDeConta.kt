@@ -11,11 +11,6 @@ class ContaPadrao : Conta {
         gold = gold
     );
 
-    override fun adicionaGold(valor: Int) {
-        if (this.conectado) {
-            this.gold += valor
-        }
-    }
 }
 
 class ContaVIP : Conta {
@@ -30,12 +25,5 @@ class ContaVIP : Conta {
     ) {
     }
 
-    override fun adicionaGold(valor: Int) {
-        var valorSomado = valor + 10
-
-        if (this.conectado) {
-            this.gold += valorSomado
-        }
-    }
 }
 

@@ -4,6 +4,8 @@ fun main(){
 
     val henrique = Eletricista("hen", "123",123)
 
+    henrique.aumento(1000)
+
 }
 
 

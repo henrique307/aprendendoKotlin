@@ -65,7 +65,7 @@ abstract class Conta(var nome: String, senha: String, gold: Int = 0) {
         }
     }
 
-    abstract fun adicionaGold(valor: Int) {
+    fun adicionaGold(valor: Int) {
         if (this.conectado) {
             this.gold += valor
         }
