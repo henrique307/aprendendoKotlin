@@ -1,5 +1,5 @@
-﻿# <h1 align="center"> Aprendendendo kotlin <h1/>
- 
+﻿# <h1 align="center"> Aprendendendo kotlin
+  
  Aprendendo a sintáxe básica de kotlin e Orientação à Objetos (OO), Utilizando um exemplo prático do um sistema de login em um jogo e um sistema de adição de novos funcionários em uma empresa.
  
  <li> Exemplo Funcionários 100% - utilizando heranças e classes abstratas.
